@@ -1,10 +1,13 @@
 import React from "react";
 import "./App.scss";
+import Header from "./Header";
+import ProductCard from "./ProductCard";
 
 function App() {
   return (
     <div className="App">
-      <p>Getting started with react typescript redux scss</p>
+      <Header />
+      <ProductCard />
     </div>
   );
 }
