@@ -7,7 +7,7 @@ export const fetchData = () => async (dispatch: Dispatch) => {
     let response = await request.json();
     dispatch({
       type: FETCH_DATA,
-      payload: response,
+      payload: response.results,
     });
   } catch (error) {
     console.log("error", error);

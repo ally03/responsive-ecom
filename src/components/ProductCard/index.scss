@@ -1,11 +1,28 @@
-.item-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+// .item-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   padding: 10px;
+// }
+.subtite-text {
+  padding: 15px;
 }
 
-.card-img {
-  width: 300px;
+.card-items {
   border: 0px;
+}
+
+.image-badge {
+  padding-top: 5px;
+  width: 90px;
+}
+
+.item-body {
+  text-align: left;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
+  background-color: #dc218a;
+  border-color: #6c757d;
 }
