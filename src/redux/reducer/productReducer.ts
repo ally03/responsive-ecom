@@ -1,13 +1,29 @@
-import { FETCH_DATA, ProductState, ProductActionTypes } from "../types";
+import {
+  FETCH_PRODUCTS,
+  FETCH_SORT_TYPES,
+  SORT_DATA,
+  ProductState,
+  ProductActionTypes,
+} from "../types";
 
 const initailState: ProductState = {
   products: [],
+  sortTypes: [],
 };
 
 const productReducer = (state = initailState, action: ProductActionTypes) => {
-  console.log("action", action.payload);
   switch (action.type) {
-    case FETCH_DATA:
+    case FETCH_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload,
+      };
+    case FETCH_SORT_TYPES:
+      return {
+        ...state,
+        sortTypes: action.payload,
+      };
+    case SORT_DATA:
       return {
         ...state,
         products: action.payload,

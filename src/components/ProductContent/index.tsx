@@ -11,10 +11,9 @@ export const ProductContent = () => {
       <p>
         The new season brings with it a new collection. For men looking for new
         in clothing pieces that are rugged, handsome, and stylish, the hunt is
-        over. Our classic pieces of quality clothing are here to help you stand
-        out from the crowd. With{" "}
+        over.
         {showMore
-          ? "everything you need for the season ahead, here you’ll find something you want to wear over and over again. For those finishing touches to your outfit be sure to check out our men’s new in footwear and accessories."
+          ? "Our classic pieces of quality clothing are here to help you stand out from the crowd. With everything you need for the season ahead, here you’ll find something you want to wear over and over again. For those finishing touches to your outfit be sure to check out our men’s new in footwear and accessories."
           : "..."}
       </p>
       <div onClick={() => setShowMore(!showMore)}>

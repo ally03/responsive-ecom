@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import "./index.scss";
 import { fetchData } from "../../redux/action";
 import { Card, Button, Row, Col, Container } from "react-bootstrap";
-import "./index.scss";
 import { ProductContent } from "../ProductContent";
+import FilterProduct from "../FilterProduct";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,10 +14,11 @@ function ProductCard(props: any) {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
-
   return (
     <Container>
       <ProductContent />
+      <FilterProduct sortTypes={props.sortType} products={props.product} />
+      <p className="item-length">{props.product.length} product found</p>
       <Row>
         {props.product.slice(0, cardVisible).map((item: any, index: number) => (
           <Col xs={6} lg={4} sm={6} key={index}>
@@ -32,7 +34,7 @@ function ProductCard(props: any) {
                   src={item.badgeImageUrl}
                   className="image-badge"
                 />
-                <Card.Text>{item.summary}</Card.Text>
+                <Card.Text>{item.name}</Card.Text>
                 <Card.Text>By {item.shop.name}</Card.Text>
                 <Card.Text>{item.price.formattedValue}</Card.Text>
               </div>
@@ -59,6 +61,7 @@ function ProductCard(props: any) {
 const mapStateToProps = (state: any) => {
   return {
     product: state.productReducer.products,
+    sortType: state.productReducer.sortTypes,
   };
 };
 
