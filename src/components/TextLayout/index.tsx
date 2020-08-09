@@ -3,7 +3,7 @@ import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-export const ProductContent = () => {
+export const TextLayout = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (

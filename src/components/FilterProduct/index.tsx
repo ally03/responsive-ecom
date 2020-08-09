@@ -8,9 +8,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { filterData } from "../../redux/action";
 import { connect } from "react-redux";
+import { Dispatch } from "redux";
 
 interface Product {
   name: string;
+  price: Price;
+}
+
+interface Price {
+  value: number;
 }
 
 interface SortTypes {
@@ -20,7 +26,7 @@ interface SortTypes {
 }
 
 interface Props {
-  filterData?: any;
+  filterData: (sort: string, products: Product[]) => void;
   products: Product[];
   sortTypes: SortTypes[];
 }
@@ -55,9 +61,9 @@ function FilterProduct(props: Props) {
   );
 }
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    filterData: (sort: any, products: Product[]) =>
+    filterData: (sort: string, products: Product[]) =>
       dispatch(filterData(sort, products)),
   };
 };

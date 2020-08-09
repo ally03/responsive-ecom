@@ -3,7 +3,12 @@ export const FETCH_SORT_TYPES = "FETCH_SORT_TYPES";
 export const SORT_DATA = "SORT_DATA";
 
 export interface Product {
-  results: string;
+  name: string;
+  price: Price;
+}
+
+export interface Price {
+  value: number;
 }
 
 export interface sortType {
