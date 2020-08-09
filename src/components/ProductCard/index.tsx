@@ -51,7 +51,6 @@ interface Props {
 }
 
 function ProductCard(props: Props) {
-  console.log("props", props);
   const [cardVisible, setCardVisible] = useState(12);
   const { fetchData } = props;
   useEffect(() => {

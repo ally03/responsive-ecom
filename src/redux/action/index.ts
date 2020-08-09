@@ -14,7 +14,7 @@ export const fetchData = () => async (dispatch: Dispatch) => {
       payload: response.sortTypes,
     });
   } catch (error) {
-    console.log("error", error);
+    throw new Error(error.message);
   }
 };
 
