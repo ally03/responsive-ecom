@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -7,13 +8,13 @@ export const ProductContent = () => {
 
   return (
     <div className="subtite-text">
-      <h3>New In Men’s Clothing</h3>
+      <h3 className="subtitle-title">Up to 60% Off In The Women’s Sale</h3>
       <p>
-        The new season brings with it a new collection. For men looking for new
-        in clothing pieces that are rugged, handsome, and stylish, the hunt is
-        over.
+        Save up to 60% off in the Joules women’s clothes sale and refresh your
+        wardrobe for less. Choose from a beautiful array of ladies’ sale
+        clothing including shoes
         {showMore
-          ? "Our classic pieces of quality clothing are here to help you stand out from the crowd. With everything you need for the season ahead, here you’ll find something you want to wear over and over again. For those finishing touches to your outfit be sure to check out our men’s new in footwear and accessories."
+          ? ", outerwear and accessories all finished with typical Joules attention to detail and thoughtful styling choices. If you’re looking for our latest collections, our new women’s clothing collection is filled with fashionable prints and luxurious materials."
           : "..."}
       </p>
       <div onClick={() => setShowMore(!showMore)}>
